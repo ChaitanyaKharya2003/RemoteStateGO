@@ -17,4 +17,8 @@ func main() {
 	a, b := 5, 6
 	sum := add(a, b)
 	fmt.Println(sum)
+
+	var length, breadth float64 = float64(10), 12.356
+	area, peri := RectangleProps(length, breadth)
+	fmt.Println("area:", area, "perimeter:", peri)
 }
