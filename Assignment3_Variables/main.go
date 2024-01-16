@@ -13,4 +13,16 @@ func main() {
 	fmt.Println("Full Name:", first, last)
 	fmt.Println("Year:", year)
 	fmt.Println(hello)
+
+	var (
+		lang             = "Go"
+		assignmentNumber = 3
+		completed        = false
+	)
+	fmt.Println(lang, assignmentNumber, completed)
+
+	date := "01/01"
+	fmt.Println(date)
+	completed = true
+	fmt.Println("Completed:", completed)
 }
