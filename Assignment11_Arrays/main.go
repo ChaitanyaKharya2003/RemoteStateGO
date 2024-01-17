@@ -75,4 +75,28 @@ func main() {
 	a6 := [5]int{4, 5, 6, 7, 8}
 	var splicea6 []int = a6[1:4]
 	fmt.Println("a6:", a6, "Splice of a6(idx 1 to 3):", splicea6)
+
+	a7 := [3]int{2, 3, 4}
+	s71 := a7[:]
+	s72 := a7[:]
+	s73 := a7[1:2]
+	fmt.Println("Original Array:", a7)
+	s71[0] = 10
+	fmt.Println("Slice 1 after change:", s71)
+	s72[1] = 12
+	fmt.Println("Slice 2 after change:", s72)
+	fmt.Println("Length of slice 1:", len(s71), "Capacity of slice 1:", cap(s71))
+	fmt.Println("Length of slice 2:", len(s72), "Capacity of slice 2:", cap(s72))
+	fmt.Println("Length of slice 3:", len(s73), "Capacity of slice 3:", cap(s73))
+
+	make1 := make([]int, 5, 5)
+	fmt.Println("Slice using make:", make1)
+
+	integers := []int{1, 2, 3, 4, 5}
+	fmt.Println("Before appending:", integers, "len", len(integers), "cap", cap(integers))
+	appslice := []int{11, 10, 12}
+	integers = append(integers, 0, 6, 7, 8, 9)
+	fmt.Println("After appending:", integers, "len", len(integers), "cap", cap(integers))
+	integers = append(integers, appslice...)
+	fmt.Println("After appending another slice:", integers, "len", len(integers), "cap", cap(integers))
 }
