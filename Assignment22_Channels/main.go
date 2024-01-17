@@ -6,6 +6,10 @@ import (
 	"time"
 )
 
+func sendData(ch chan<- int) {
+	ch <- 12
+}
+
 func hello(done chan bool, data int) {
 	fmt.Println("Hello")
 	fmt.Println("Goroutine before sleep")
@@ -44,6 +48,7 @@ func main() {
 		fmt.Println("Odd")
 	}
 
-	unichannel := make(chan<- int)
-	
+	unichannel := make(chan int)
+	go sendData(unichannel)
+	fmt.Println(<-unichannel)
 }
