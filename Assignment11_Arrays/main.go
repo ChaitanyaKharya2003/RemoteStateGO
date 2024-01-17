@@ -5,6 +5,12 @@ import (
 	"math/rand"
 )
 
+func addOne(arr []int) {
+	for i := 0; i < len(arr); i++ {
+		arr[i]++
+	}
+}
+
 func change0(arr [5]int) {
 	arr[0] = 1
 	fmt.Println("changing a4[0] to 1 inside function", arr)
@@ -19,6 +25,7 @@ func print32(arr [3][2]int) {
 	}
 
 }
+
 func print44(arr [4][4]float64) {
 	for _, row := range arr {
 		for _, item := range row {
@@ -99,4 +106,12 @@ func main() {
 	fmt.Println("After appending:", integers, "len", len(integers), "cap", cap(integers))
 	integers = append(integers, appslice...)
 	fmt.Println("After appending another slice:", integers, "len", len(integers), "cap", cap(integers))
+
+	addOne(integers)
+	fmt.Println("After adding one through function:", integers)
+
+	neededintegers := integers[:len(integers)-4]
+	copyneeded := make([]int, len(neededintegers))
+	copy(copyneeded, neededintegers)
+	fmt.Println("Copy Implementation:", copyneeded)
 }
